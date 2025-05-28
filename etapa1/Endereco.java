@@ -17,4 +17,52 @@ public class Endereco {
         this.numero = numero;
         this.complemento = complemento;
     }
+
+    public String getNomeDaRua(){
+        return nomeDaRua;
+    }
+    public String getCidade(){
+        return cidade;
+    }
+    public String getEstado(){
+        return estado;
+    }
+    public String getPais(){
+        return pais;
+    }
+    public String getCep(){
+        return cep;
+    }
+    public String getNumero(){
+        return numero;
+    }
+    public String getComplemento(){
+        return complemento;
+    }
+
+    public void setNomeDaRua(String nomeDaRua){
+        this.nomeDaRua = nomeDaRua;
+    }
+    public void setCidade(String cidade){
+        this.cidade = cidade;
+    }
+    public void setEstado(String estado){
+        this.estado = estado;
+    }
+    public void setPais(String pais){
+        this.pais = pais;
+    }
+    public void setCep(String cep){
+        this.cep = cep;
+    }
+    public void setNumero(String numero){
+        this.numero = numero;
+    }
+    public void setComplemento(String complemento){
+        this.complemento = complemento;
+    }
+
+    public String toString(){
+        return String.format("%s, %s. %s, %s - %s - %s", getNomeDaRua(), getNumero(), getCidade(), getEstado(), getPais(), getCep()); 
+        }
 }
