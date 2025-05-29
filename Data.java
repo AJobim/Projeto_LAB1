@@ -28,8 +28,6 @@ public class Data {
             this.ano = 2000;
         }
 
-        
-
     }
 
     //getters

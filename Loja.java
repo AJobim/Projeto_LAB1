@@ -4,18 +4,24 @@ public class Loja {
     private String nome;
     private int quantidadeFuncionarios;
     private int salarioBaseFuncionario;
+    private Endereco endereco;
+    private Data data;
 
     //Métodos construtores
-    public Loja(String nome, int quantidadeFuncionarios, int salarioBaseFuncionario){
+    public Loja(String nome, int quantidadeFuncionarios, int salarioBaseFuncionario, Endereco endereco, Data data){
         this.nome = nome;
         this.quantidadeFuncionarios = quantidadeFuncionarios;
         this.salarioBaseFuncionario = salarioBaseFuncionario;
+        this.endereco = endereco;
+        this.data = data;
     }
 
-    public Loja(String nome, int quantidadeFuncionarios){
+    public Loja(String nome, int quantidadeFuncionarios, Endereco endereco, Data data){
         this.nome = nome;
         this.quantidadeFuncionarios = quantidadeFuncionarios;
-        this.salarioBaseFuncionario = -1;   
+        this.salarioBaseFuncionario = -1;
+        this.endereco = endereco;
+        this.data = data; 
     }
 
     // Métodos setter e getters
@@ -28,6 +34,12 @@ public class Loja {
     public void setSalarioBaseFuncionario(int salarioBaseFuncionario){
         this.salarioBaseFuncionario = salarioBaseFuncionario;
     }
+    public void setEndereco(Endereco endereco){
+        this.endereco = endereco;
+    }
+    public void setData(Data data){
+        this.data = data;
+    }
 
     public String getNome(){
         return nome;
@@ -38,7 +50,12 @@ public class Loja {
     public int getSalarioBaseFuncionario(){
         return salarioBaseFuncionario;
     }
-
+    public Endereco getEndereco(){
+        return endereco;
+    }
+    public Data getData(){
+        return data;
+    }
     //Saida formatada
     public String toString(){
         return String.format("Nome da empresa: %s;\nFuncionarios: %s;\nSalario base: %s", getNome(), getQuantidadeFuncionarios(), getSalarioBaseFuncionario());
