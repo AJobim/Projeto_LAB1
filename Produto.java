@@ -1,4 +1,4 @@
-package etapa1;
+package Projeto_LAB;
 
 public class Produto {
     private String nome;
