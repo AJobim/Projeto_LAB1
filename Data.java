@@ -1,5 +1,3 @@
-package Projeto_LAB;
-
 public class Data {
     private int dia;
     private int mes;

@@ -1,5 +1,3 @@
-package Projeto_LAB;
-
 public class Loja {
     private String nome;
     private int quantidadeFuncionarios;
@@ -7,7 +5,24 @@ public class Loja {
     private Endereco endereco;
     private Data data;
 
-    //Métodos construtores
+     //Construtores da etapa 1
+    public Loja(String nome, int quantidadeFuncionarios, int salarioBaseFuncionario){
+        this.nome = nome;
+        this.quantidadeFuncionarios = quantidadeFuncionarios;
+        this.salarioBaseFuncionario = salarioBaseFuncionario;
+        this.endereco = null;
+        this.data = null;
+    }
+    public Loja(String nome, int quantidadeFuncionarios){
+        this.nome = nome;
+        this.quantidadeFuncionarios = quantidadeFuncionarios;
+        this.salarioBaseFuncionario = -1;
+        this.endereco = null;
+        this.data = null;
+    }
+
+
+    //Construtores da etapa 2, com endereco e data
     public Loja(String nome, int quantidadeFuncionarios, int salarioBaseFuncionario, Endereco endereco, Data data){
         this.nome = nome;
         this.quantidadeFuncionarios = quantidadeFuncionarios;
@@ -15,7 +30,6 @@ public class Loja {
         this.endereco = endereco;
         this.data = data;
     }
-
     public Loja(String nome, int quantidadeFuncionarios, Endereco endereco, Data data){
         this.nome = nome;
         this.quantidadeFuncionarios = quantidadeFuncionarios;
@@ -23,6 +37,7 @@ public class Loja {
         this.endereco = endereco;
         this.data = data; 
     }
+
 
     // Métodos setter e getters
     public void setNome(String nome){
@@ -56,6 +71,7 @@ public class Loja {
     public Data getData(){
         return data;
     }
+    
     //Saida formatada
     public String toString(){
         return String.format("Nome da empresa: %s;\nFuncionarios: %s;\nSalario base: %s", getNome(), getQuantidadeFuncionarios(), getSalarioBaseFuncionario());

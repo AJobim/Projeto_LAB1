@@ -1,4 +1,3 @@
-package Projeto_LAB;
 public class Endereco {
     private String nomeDaRua;
     private String cidade;

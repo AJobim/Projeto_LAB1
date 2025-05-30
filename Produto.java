@@ -1,10 +1,16 @@
-package Projeto_LAB;
-
 public class Produto {
     private String nome;
     private double preco;
     private Data validade;
 
+    //construtor da etapa 1
+    public Produto(String nome, double preco){
+        this.nome = nome;
+        this.preco = preco;
+        this.validade = null;
+    }
+
+    //construtor da etapa 2
     public Produto(String nome, double preco, Data validade){
         this.nome = nome;
         this.preco = preco;
@@ -37,11 +43,10 @@ public class Produto {
         return String.format("-> %s - %s", getNome(), getPreco());
     }
     
-    public boolean estaVencido(int ano, int mes, int dia){
-    
-        if (validade.getAno() > ano){
-            if (validade.getMes() > mes){
-                if (validade.getDia() > dia){
+    public boolean estaVencido(Data dataAtual){
+        if (validade.getAno() >= dataAtual.getAno()){
+            if (validade.getMes() >= dataAtual.getMes()){
+                if (validade.getDia() >= dataAtual.getDia()){
                     return true;
                 } else return false;
             } else return false;
