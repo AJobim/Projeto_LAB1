@@ -16,7 +16,7 @@ public class Data {
             } else diasMes = 28;
         } else diasMes = 31;
 
-        if (dia <= diasMes && mes <= 12){
+        if (dia <= diasMes && mes <= 12 && ano >= 2000){
             this.dia = dia;
             this.mes = mes;
         } 

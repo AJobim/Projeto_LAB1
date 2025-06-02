@@ -1,20 +1,20 @@
 public class Produto {
     private String nome;
     private double preco;
-    private Data validade;
+    private Data dataValidade;
 
     //construtor da etapa 1
     public Produto(String nome, double preco){
         this.nome = nome;
         this.preco = preco;
-        this.validade = null;
+        this.dataValidade = null;
     }
 
     //construtor da etapa 2
-    public Produto(String nome, double preco, Data validade){
+    public Produto(String nome, double preco, Data dataValidade){
         this.nome = nome;
         this.preco = preco;
-        this.validade = validade;
+        this.dataValidade = dataValidade;
     }
 
     //getters
@@ -24,8 +24,8 @@ public class Produto {
     public double getPreco(){
         return preco;
     }
-    public Data getValidade(){
-        return validade;
+    public Data getDataValidade(){
+        return dataValidade;
     }
 
     //setters
@@ -35,18 +35,25 @@ public class Produto {
     public void setPreco(double preco){
         this.preco = preco;
     }
-    public void setValidade(Data validade){
-        this.validade = validade;
+    public void setDataValidade(Data dataValidade){
+        this.dataValidade = dataValidade;
     }
 
     public String toString(){
         return String.format("-> %s - %s", getNome(), getPreco());
     }
     
+    //Verifica se o produto venceu
     public boolean estaVencido(Data dataAtual){
-        if (validade.getAno() >= dataAtual.getAno()){
-            if (validade.getMes() >= dataAtual.getMes()){
-                if (validade.getDia() >= dataAtual.getDia()){
+        if (dataValidade.getAno() < dataAtual.getAno()){
+            return true;
+        }
+        else if (dataValidade.getAno() == dataAtual.getAno()){
+            if (dataValidade.getMes() < dataAtual.getMes()){
+                    return true;
+            }
+            else if (dataValidade.getMes() == dataAtual.getMes()){
+                if (dataValidade.getDia() < dataAtual.getDia()){
                     return true;
                 } else return false;
             } else return false;
