@@ -1,9 +1,9 @@
 public class Loja {
-    private String nome;
-    private int quantidadeFuncionarios;
-    private double salarioBaseFuncionario;
-    private Endereco endereco;
-    private Data dataFundacao;
+    protected String nome;
+    protected int quantidadeFuncionarios;
+    protected double salarioBaseFuncionario;
+    protected Endereco endereco;
+    protected Data dataFundacao;
 
      //Construtores da etapa 1
     public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario){
@@ -74,7 +74,7 @@ public class Loja {
     
     //Saida formatada
     public String toString(){
-        return String.format("Nome da empresa: %s;\nFuncionarios: %s;\nSalario base: %s;\n\nEndereço:\n%s\n\nData de fundação: %s", getNome(), getQuantidadeFuncionarios(), getSalarioBaseFuncionario(), endereco.toString(), dataFundacao.toString());
+        return String.format("Nome da loja: %s;\nFuncionarios: %s;\nSalario base: %s;\n\nEndereço:\n%s\n\nData de fundação: %s", getNome(), getQuantidadeFuncionarios(), getSalarioBaseFuncionario(), endereco.toString(), dataFundacao.toString());
     }
 
     public double gastosComSalario(){

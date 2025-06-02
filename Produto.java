@@ -40,7 +40,7 @@ public class Produto {
     }
 
     public String toString(){
-        return String.format("-> %s - %s", getNome(), getPreco());
+        return String.format("-> %s - %s | Data de validade: %s", getNome(), getPreco(), dataValidade.toString());
     }
     
     //Verifica se o produto venceu
