@@ -10,8 +10,15 @@ método toString, incluindo a informação específica da classe. */
 public class Vestuario extends Loja {
     boolean produtosImportados;
 
+    //Etapa 3
     public Vestuario(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataFundacao, boolean produtosImportados){
         super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataFundacao);
+        this.produtosImportados = produtosImportados;
+    }
+
+    //Etapa 4
+    public Vestuario(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataFundacao, boolean produtosImportados, int estoqueProdutosMax){
+        super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataFundacao, estoqueProdutosMax);
         this.produtosImportados = produtosImportados;
     }
 

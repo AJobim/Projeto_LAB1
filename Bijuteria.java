@@ -9,8 +9,14 @@ método toString, incluindo a informação específica da classe. */
 public class Bijuteria extends Loja {
     double metaVendas;
 
+    //Etapa 3
     public Bijuteria(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataFundacao, double metaVendas){
         super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataFundacao);
+        this.metaVendas = metaVendas;
+    }
+    //Etapa 4
+    public Bijuteria(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataFundacao, double metaVendas, int estoqueProdutosMax){
+        super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataFundacao, estoqueProdutosMax);
         this.metaVendas = metaVendas;
     }
 

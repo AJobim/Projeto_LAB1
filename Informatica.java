@@ -10,8 +10,15 @@ sobrescreva o método toString, incluindo a informação específica da classe. 
 public class Informatica extends Loja {
     double seguroEletronicos;
 
+    //Etapa 3
     public Informatica(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataFundacao, double seguroEletronicos){
         super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataFundacao);
+        this.seguroEletronicos = seguroEletronicos;
+    }
+
+    //Etapa 4
+    public Informatica(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataFundacao, double seguroEletronicos, int estoqueProdutosMax){
+        super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataFundacao, estoqueProdutosMax);
         this.seguroEletronicos = seguroEletronicos;
     }
 

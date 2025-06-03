@@ -10,8 +10,15 @@ informação específica da classe */
 public class Alimentacao extends Loja {
     Data dataAlvara;
     
+    //Construtor etapa 3
     public Alimentacao(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataFundacao, Data dataAlvara){
         super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataFundacao);
+        this.dataAlvara = dataAlvara;
+    }
+
+    //Construtor etapa 4
+    public Alimentacao(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataFundacao, Data dataAlvara, int estoqueProdutosMax){
+        super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataFundacao, estoqueProdutosMax);
         this.dataAlvara = dataAlvara;
     }
 
