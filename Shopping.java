@@ -63,27 +63,29 @@ public class Shopping {
     }
 
     public boolean insereLoja(Loja novaLoja){
-        for(int i = 0; i < lojas.length; i++)
+        for(int i = 0; i < lojas.length; i++){
             if (lojas[i] == null){
                 lojas[i] = novaLoja;
                 return true;
             }
+        }
         return false;
     }
 
     public boolean removeLoja(String nomeLoja){
-        for(int i = 0; i < lojas.length; i++)
+        for(int i = 0; i < lojas.length; i++){
             if (lojas[i].getNome() == nomeLoja){
                 lojas[i] = null;
                 return true;
             }
+        }
         return false;
     }
 
     public int quantidadeLojasPorTipo(String tipoLoja){
         int contador = 0;
         tipoLoja = tipoLoja.toLowerCase();
-        for(int i = 0; i < lojas.length; i++)
+        for(int i = 0; i < lojas.length; i++){
             if(lojas[i] != null){
                 
                 switch(tipoLoja){
@@ -106,21 +108,23 @@ public class Shopping {
                         return -1;
                 }
             }
+        }
         return contador;
     }
 
     public Informatica lojaSeguroMaisCaro(){
+        Informatica lojaMaisCara = null;
         double maisCaro = 0;
-        for(int i = 0; i < lojas.length; i++)
+        for(int i = 0; i < lojas.length; i++){
             if(lojas[i] != null && lojas[i] instanceof Informatica){
-                Informatica info = (Informatica) lojas[i];
-                if (info.getSeguroEletronicos() > maisCaro){
-                    maisCaro = info.getSeguroEletronicos();
-                    return info;
+                Informatica lojaInformatica = (Informatica) lojas[i];
+                if (lojaInformatica.getSeguroEletronicos() > maisCaro){
+                    maisCaro = lojaInformatica.getSeguroEletronicos();
+                    lojaMaisCara = lojaInformatica;
                 }
             }
-        //retorna null caso não haja loja2
-        return null;
+        }
+        return lojaMaisCara;
     }
 
     public String toString(){

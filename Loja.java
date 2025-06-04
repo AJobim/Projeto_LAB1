@@ -143,8 +143,8 @@ public class Loja {
     //Saida formatada
     public String toString(){
         return String.format("Nome da loja: %s;\nFuncionarios: %s;\nSalario base: %s;\n\n" +
-                            "Endereço:\n%s\n\nData de fundação: %s\n\nProdutos em estoque:\n%s",
+                            "Endereço:\n%s\n\nData de fundação: %s\n\nProdutos em estoque: %s",
                             getNome(), getQuantidadeFuncionarios(), getSalarioBaseFuncionario(), 
-                            endereco.toString(), dataFundacao.toString(), estoqueProdutos.toString());
+                            endereco.toString(), dataFundacao.toString(), (estoqueProdutos!=null ? estoqueProdutos.toString() : 0));
     }
 }
