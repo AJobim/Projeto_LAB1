@@ -31,6 +31,12 @@ public class Vestuario extends Loja {
     }
 
     public String toString(){
-        return String.format("Nome da loja: %s;\nLoja de Vestuários. %s produtos importados.\n\nFuncionarios: %s;\nSalario base: %s;\n\nEndereço:\n%s\n\nData de fundação: %s", getNome(), getProdutosImportados() ? "Vende" : "Não vende", getQuantidadeFuncionarios(), getSalarioBaseFuncionario(), endereco.toString(), dataFundacao.toString());
+        return String.format(
+                        "LOJA DE VESTUARIOS\\n" +
+                        "\n Nome da loja: %s;\nFuncionarios: %s;\nSalario base: %s;\n\n" +
+                        "Endereço:\n%s" + "\n\nData de fundação: %s\n\n%s produtos importados", 
+                        getNome(), getQuantidadeFuncionarios(), getSalarioBaseFuncionario(), 
+                        endereco.toString(), dataFundacao.toString(), getProdutosImportados() ? "Vende" : "Não vende"
+                        );
     }
 }

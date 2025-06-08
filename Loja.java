@@ -121,22 +121,24 @@ public class Loja {
     }
 
     public boolean insereProduto(Produto novoProduto){
-        for (int i =0; i < this.estoqueProdutos.length; i++)
+        for (int i =0; i < this.estoqueProdutos.length; i++){
             if (estoqueProdutos[i] == null){
                 estoqueProdutos[i] = novoProduto;
                 return true;
             }
+        }
         return false;
     }
 
     public boolean removeProduto(String nomeProduto){
-        for (int i = 0; i < estoqueProdutos.length; i++)
-            if (estoqueProdutos != null){
+        for (int i = 0; i < estoqueProdutos.length; i++){
+            if (estoqueProdutos[i] != null){
                 if (estoqueProdutos[i].getNome() == nomeProduto){
                     estoqueProdutos[i] = null;
                     return true;
                 }
             }
+        }
         return false;
     }
 

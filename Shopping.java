@@ -1,47 +1,16 @@
-/*
-Crie uma classe chamada Shopping. Um Shopping possui os atributos nome
-(do tipo String), endereco (do tipo Endereco) e lojas (que deve ser um
-array de Loja). No construtor de Shopping, receba informações para
-inicializar o nome, o endereço e, também, receba a quantidade máxima de lojas
-deste shopping (do tipo inteiro). No construtor de shopping, então, instancie o
-array lojas, informando a capacidade dele de acordo com o valor recebido por
-parâmetro. Naturalmente, quando um Shopping for criado, ele não terá lojas
-ainda, apenas o espaço em memória necessário para armazená-las. Crie os
-métodos de acesso dos atributos. 
-Implemente o método toString nesta classe, retornando uma String formatada da forma que você desejar, desde
-que contenha as informações de todos os atributos da classe.
-• Na classe Shopping, crie os seguintes métodos:
-o insereLoja: este método recebe um objeto do tipo Loja por
-parâmetro e insere esta loja no array lojas, na primeira posição livre do
-array (ou seja, a primeira posição nula). O método retorna verdadeiro caso
-a loja seja inserida corretamente e falso caso contrário (ou seja, caso não
-haja lugar no array).
-o removeLoja: este método recebe uma String que representa o nome
-de uma loja e remove a loja com este nome do array lojas. O método
-retorna verdadeiro caso a loja seja removida e falso caso contrário (caso
-não haja a loja com o nome solicitado no array).
-o quantidadeLojasPorTipo: este método recebe como parâmetro
-uma String que indica o tipo de loja que deve ser buscado (Cosmético,
-Vestuário, Bijuteria, Alimentação ou Informática). Deve-se então retornar
-a quantidade de lojas desse tipo que existem no shopping. Caso seja
-recebida uma String que não corresponde a nenhuma das opções
-anteriores, o método retorna –1.
-o lojaSeguroMaisCaro: este método não recebe parâmetros e retorna
-a loja do tipo Informatica que paga o maior valor de seguro de
-eletrônicos do shopping. Caso não haja lojas deste tipo, o método retorna
-null */
-
 public class Shopping {
     protected String nome;
     protected Endereco endereco;
     protected Loja[] lojas;
 
+    //Construtor
     public Shopping(String nome, Endereco endereco, int maxLojas){
         this.nome = nome;
         this.endereco = endereco;
         this.lojas = new Loja[maxLojas];
     }
 
+    //Getters e setters
     public void setNome(String nome){
         this.nome = nome;
     }
@@ -65,18 +34,22 @@ public class Shopping {
     public boolean insereLoja(Loja novaLoja){
         for(int i = 0; i < lojas.length; i++){
             if (lojas[i] == null){
-                lojas[i] = novaLoja;
+                lojas[i] = novaLoja; //Cria loja no primeiro null encontrado de um array
                 return true;
             }
         }
-        return false;
+        return false; //Se não houver nenhum caso retorna falso
     }
 
     public boolean removeLoja(String nomeLoja){
+        if (lojas == null) return false;
+
         for(int i = 0; i < lojas.length; i++){
-            if (lojas[i].getNome() == nomeLoja){
-                lojas[i] = null;
-                return true;
+            if (lojas[i] != null){
+                if (lojas[i].getNome() == nomeLoja){
+                    lojas[i] = null;
+                    return true;
+                }
             }
         }
         return false;
@@ -84,23 +57,27 @@ public class Shopping {
 
     public int quantidadeLojasPorTipo(String tipoLoja){
         int contador = 0;
-        tipoLoja = tipoLoja.toLowerCase();
+        tipoLoja = tipoLoja.toLowerCase(); //escreve o tipoLoja em letras minusculas pra diminuir as possibilidades
+
         for(int i = 0; i < lojas.length; i++){
             if(lojas[i] != null){
-                
                 switch(tipoLoja){
+                    case "alimentação":
                     case "alimentacao":
                         if (lojas[i] instanceof Alimentacao) contador++;
                         break;
                     case "bijuteria":
                         if (lojas[i] instanceof Bijuteria) contador++;
                         break;
+                    case "cosmético":
                     case "cosmetico":
                         if (lojas[i] instanceof Cosmetico) contador++;
                         break;
+                    case "informática":
                     case "informatica":
                         if (lojas[i] instanceof Informatica) contador++;
                         break;
+                    case "vestuário":
                     case "vestuario":
                         if (lojas[i] instanceof Vestuario) contador++;
                         break;
@@ -115,9 +92,11 @@ public class Shopping {
     public Informatica lojaSeguroMaisCaro(){
         Informatica lojaMaisCara = null;
         double maisCaro = 0;
+
         for(int i = 0; i < lojas.length; i++){
             if(lojas[i] != null && lojas[i] instanceof Informatica){
-                Informatica lojaInformatica = (Informatica) lojas[i];
+                Informatica lojaInformatica = (Informatica) lojas[i]; //
+                
                 if (lojaInformatica.getSeguroEletronicos() > maisCaro){
                     maisCaro = lojaInformatica.getSeguroEletronicos();
                     lojaMaisCara = lojaInformatica;
