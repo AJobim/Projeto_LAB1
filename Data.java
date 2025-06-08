@@ -7,10 +7,10 @@ public class Data {
         int diasMes;    
         this.ano = ano;
 
-        if (mes == 4 || mes == 6 || mes == 9 || mes == 11 ){
+        if (mes == 4 || mes == 6 || mes == 9 || mes == 11 ){ //Meses com 30 dias
             diasMes = 30;
         } 
-        else if (mes == 2){
+        else if (mes == 2){ //Caso fevereiro, checa se tem 28 ou 29 dias
             if (verificaAnoBissexto() == true){
                 diasMes = 29;
             } else diasMes = 28;
@@ -53,6 +53,7 @@ public class Data {
     public boolean verificaAnoBissexto(){
         if (this.ano % 4 == 0 && (this.ano % 100 != 0 || this.ano % 400 == 0)){
             return true;
+            
         } else return false;
     }
 

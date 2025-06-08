@@ -45,14 +45,14 @@ public class Produto {
     
     //Verifica se o produto venceu
     public boolean estaVencido(Data dataAtual){
-        if (dataValidade.getAno() < dataAtual.getAno()){
+        if (dataValidade.getAno() < dataAtual.getAno()){ //Se o ano de hoje for maior que o da validade está vencido
             return true;
         }
-        else if (dataValidade.getAno() == dataAtual.getAno()){
-            if (dataValidade.getMes() < dataAtual.getMes()){
+        else if (dataValidade.getAno() == dataAtual.getAno()){ //Se for o mesmo, compara mês
+            if (dataValidade.getMes() < dataAtual.getMes()){ 
                     return true;
             }
-            else if (dataValidade.getMes() == dataAtual.getMes()){
+            else if (dataValidade.getMes() == dataAtual.getMes()){ //Se o mesmo, compara dia
                 if (dataValidade.getDia() < dataAtual.getDia()){
                     return true;
                 } else return false;

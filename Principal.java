@@ -37,7 +37,7 @@ public class Principal{
                 Loja loja = new Loja(nomeLoja, nFuncionarios, salarioBase, endLoja, fundData);
                 
                 System.out.println("Loja criada com sucesso!");
-                System.out.println("Dados da loja:\n" + loja.toString());
+                System.out.println("Dados da loja\n" + loja.toString());
                 break;
 
             case 2: //CRIA O PRODUTO

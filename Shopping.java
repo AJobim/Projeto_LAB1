@@ -95,8 +95,8 @@ public class Shopping {
 
         for(int i = 0; i < lojas.length; i++){
             if(lojas[i] != null && lojas[i] instanceof Informatica){
-                Informatica lojaInformatica = (Informatica) lojas[i]; //
-                
+                Informatica lojaInformatica = (Informatica) lojas[i]; //Transforma o array de lojas em uma variável de Informática pra usar as funções
+
                 if (lojaInformatica.getSeguroEletronicos() > maisCaro){
                     maisCaro = lojaInformatica.getSeguroEletronicos();
                     lojaMaisCara = lojaInformatica;

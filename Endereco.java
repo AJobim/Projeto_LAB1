@@ -63,5 +63,5 @@ public class Endereco {
 
     public String toString(){
         return String.format("%s, %s. %s, %s - %s - %s", getNomeDaRua(), getNumero(), getCidade(), getEstado(), getPais(), getCep()); 
-        }
+    }
 }

@@ -39,6 +39,7 @@ public class Loja {
     }
 
     //Construtores da etapa 4, com estoqueProdutos
+    //Com salarioBase
     public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataFundacao, int estoqueProdutosMax){
         this.nome = nome;
         this.quantidadeFuncionarios = quantidadeFuncionarios;
@@ -47,6 +48,7 @@ public class Loja {
         this.dataFundacao = dataFundacao;
         this.estoqueProdutos = new Produto[estoqueProdutosMax];
     }
+    //Sem salarioBase
     public Loja(String nome, int quantidadeFuncionarios, Endereco endereco, Data dataFundacao, int estoqueProdutosMax){
         this.nome = nome;
         this.quantidadeFuncionarios = quantidadeFuncionarios;
@@ -114,15 +116,16 @@ public class Loja {
     }
 
     public void imprimeProdutos(){
-        for (int i = 0; i < estoqueProdutos.length; i++)
+        for (int i = 0; i < estoqueProdutos.length; i++){
             if(estoqueProdutos[i] != null){
                 System.out.println(estoqueProdutos[i]);
             }
+        }
     }
 
     public boolean insereProduto(Produto novoProduto){
         for (int i =0; i < this.estoqueProdutos.length; i++){
-            if (estoqueProdutos[i] == null){
+            if (estoqueProdutos[i] == null){ //Cria um produto no primeiro espaço livre disponível
                 estoqueProdutos[i] = novoProduto;
                 return true;
             }
@@ -144,9 +147,9 @@ public class Loja {
 
     //Saida formatada
     public String toString(){
-        return String.format("Nome da loja: %s;\nFuncionarios: %s;\nSalario base: %s;\n\n" +
+        return String.format("Nome da loja: %s;\nFuncionários: %s;\nSalário base: %s;\n\n" +
                             "Endereço:\n%s\n\nData de fundação: %s\n\nProdutos em estoque: %s",
                             getNome(), getQuantidadeFuncionarios(), getSalarioBaseFuncionario(), 
-                            endereco.toString(), dataFundacao.toString(), (estoqueProdutos!=null ? estoqueProdutos.toString() : 0));
+                            (endereco!= null ? endereco.toString() : "Endereço não disponível"), (dataFundacao != null ? dataFundacao.toString() : "Não disponível"), (estoqueProdutos!=null ? estoqueProdutos.toString() : 0));
     }
 }
